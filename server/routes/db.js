@@ -1,9 +1,9 @@
 var mysql = require('mysql')
 var db_config = {
     host:'localhost',
+    port:3306,
     user:'root',
-    port:'3306',
-    password:'805912',
+    password:'password',
     database:'webmusic'
 }
 
@@ -23,6 +23,17 @@ var pool = mysql.createPool(db_config);
 //     });
 // }
 // handleDisconnect();
+// var sql = 'SELECT * FROM user';
+// var str = " ";
+// connection.query(sql, function (err,result) {
+//     if(err){
+//         console.log('[SELECT ERROR]:',err.message);
+//     }
+//     str = JSON.stringify(result);
+//     //数据库查询的数据保存在result中，但浏览器并不能直接读取result中的结果，因此需要用JSON进行解析
+//     //console.log(result);   //数据库查询结果返回到result中
+//     console.log(str);
+// });
 // connection.end();  
 function query(sql,callback){
     pool.getConnection(function(err,connection){
