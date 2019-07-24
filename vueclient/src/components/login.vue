@@ -1,5 +1,5 @@
 <template>
-  <div class="backlogin">
+  <div class="backlogin" style="background: url('../assets/logo.png') no-repeat center center;">
         <div class="login_box">
             <div class="title">登录</div>
             <div class="login_input">
@@ -34,7 +34,7 @@ export default {
         login(){
             this.disablebtn = true
             this.loginText = "登录中..."
-            this.$http.post('/users/user/login',qs.stringify({
+            this.$http.post('/api/users/login',qs.stringify({
                 username:this.username,
                 password:this.password
             },{
@@ -44,6 +44,7 @@ export default {
                 this.disablebtn = false
                 this.loginText = '登录'
                 console.log(data)
+               this.$router.push('/home')
             },err=>{
                 this.disablebtn = false
                 this.loginText = '登录'

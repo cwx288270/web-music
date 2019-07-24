@@ -12,7 +12,7 @@ import axios from 'axios'
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 axios.defaults.withCredentials =true //跨域保存session有用
-// axios.defaults.baseURL =  "/api"
+// axios.defaults.baseURL =  "localhost:3000/users"
 Vue.prototype.$http = axios;
 /* eslint-disable no-new */
 new Vue({
